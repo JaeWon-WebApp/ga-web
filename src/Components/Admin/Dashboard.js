@@ -16,28 +16,6 @@ function Dashboard() {
     test();
   }, []);
 
-  const dataResult = (data) => {
-    if(data.id === 'user'){
-      let dimension = [];
-      let metrics1 = [], metrics2 = [], metrics3 = [];
-      data.info.rows.forEach(row => {
-        dimension.push(row.dimensionValues[0].value);
-        metrics1.push(row.metricValues[0].value);
-        metrics2.push(row.metricValues[1].value);
-        metrics3.push(row.metricValues[2].value);
-      });
-      return { id: data.id, dimension, metrics: [metrics1, metrics2, metrics3] }
-    } else {
-      let dimension = [];
-      let metrics = [];
-      data.info.rows.forEach(row => {
-        dimension.push(row.dimensionValues[0].value);
-        metrics.push(row.metricValues[0].value);
-      });
-      return { id: data.id, dimension, metrics }
-    }
-  }
-
   return (
     <>
       {isLoading ? (
@@ -46,14 +24,14 @@ function Dashboard() {
         </div>
       ) : (
         <div>
-          <div style={{width: '400px', height: '400px'}}>
-            <DashboardChart data={dataResult(dashboardInfo.find(row => row.id === 'user'))} />
+          <div style={{width: '600px', height: '600px'}}>
+            <DashboardChart data={dashboardInfo[0]} />
           </div>
-          <div>
-            <DashboardChart data={dataResult(dashboardInfo.find(row => row.id === 'device'))} />
+          <div style={{width: '600px', height: '600px'}}>
+            <DashboardChart data={dashboardInfo[1]} />
           </div>
-          <div>
-            <DashboardChart data={dataResult(dashboardInfo.find(row => row.id === 'browser'))} />
+          <div style={{width: '600px', height: '600px'}}>
+            <DashboardChart data={dashboardInfo[2]} />
           </div>
         </div>
       )}
