@@ -23,14 +23,14 @@ function Dashboard() {
           대기중
         </div>
       ) : (
-        <div>
-          <div style={{width: '600px', height: '600px'}}>
+        <div style={{display: 'flex'}}>
+          <div style={{width: '30%', marginLeft: '5%', alignSelf: 'center'}}>
             <DashboardChart data={dashboardInfo[0]} />
           </div>
-          <div style={{width: '600px', height: '600px'}}>
+          <div style={{width: '30%', marginLeft: '5%', alignSelf: 'center'}}>
             <DashboardChart data={dashboardInfo[1]} />
           </div>
-          <div style={{width: '600px', height: '600px'}}>
+          <div style={{width: '30%', marginLeft: '5%', alignSelf: 'center'}}>
             <DashboardChart data={dashboardInfo[2]} />
           </div>
         </div>

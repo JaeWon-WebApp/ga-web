@@ -4,7 +4,7 @@ import { Line, Pie } from 'react-chartjs-2';
 function DashboardChart(props) {
   const [chartData, setChartData] = useState({});
   const [chartOption, setChartOption] = useState({});
-  const chartColors = ["#336699", "#99CCFF", "#999933", "#666699", "#CC9933", "#006666", "#3399FF", "#993300", "#CCCC99", "#666666", "#FFCC66", "#6699CC", "#663366", "#9999CC",];
+  const chartColors = ["#3cb4c8", "#50a0c8", "#3c78c8", "#5050c8", "#666699", "#3399FF", "#666666", "#FFCC66", "#6699CC", "#663366", "#9999CC",];
 
   useEffect(() => {
     console.log(props.data);
@@ -18,22 +18,22 @@ function DashboardChart(props) {
               label: '1dayUser',
               data: props.data.info.metrics.active1DayUser,
               fill: false,
-              backgroundColor: 'rgba(75, 192, 192, 0.2)',
-              borderColor: 'rgba(75, 192, 192, 1)',
+              backgroundColor: 'rgba(80, 160, 200, 0.5)',
+              borderColor: 'rgba(80, 160, 200, 1)',
             },
             {
               label: '7dayUser',
               data: props.data.info.metrics.active7DayUser,
               fill: false,
-              backgroundColor: 'rgba(65, 192, 192, 0.2)',
-              borderColor: 'rgba(65, 192, 192, 1)',
+              backgroundColor: 'rgba(60, 120, 200, 0.5)',
+              borderColor: 'rgba(60, 120, 200, 1)',
             },
             {
               label: '28dayUser',
               data: props.data.info.metrics.active28DayUser,
               fill: false,
-              backgroundColor: 'rgba(55, 192, 192, 0.2)',
-              borderColor: 'rgba(55, 192, 192, 1)',
+              backgroundColor: 'rgba(80, 80, 200, 0.5)',
+              borderColor: 'rgba(80, 80, 200, 1)',
             },
           ],
         });
